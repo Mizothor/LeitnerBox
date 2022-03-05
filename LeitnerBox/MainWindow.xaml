@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LeitnerBox"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="LeitnerBox" MinHeight="500" MinWidth="800" MaxWidth="800" Background="DarkSlateBlue">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Frame x:Name="Main" Grid.Column="1" Grid.RowSpan="2" NavigationUIVisibility="Hidden"/>
+
+        <TextBlock Text="LeitnerBox"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="26"
+                   FontStyle="Italic"
+                   Foreground="White"/>
+
+        <StackPanel Grid.Row="1" >
+            <Button Content="Add Cards" Height="50" Margin="5" Click="AddCardsClick"/>
+            <Button Content="Read Cards" Height="50" Margin="5" Click="ReadCardsClick"/>
+        </StackPanel>
     </Grid>
+    
+               
 </Window>
